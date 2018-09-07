@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+  <title>multi-select-combo-box demo</title>
+
+  <script src="../../webcomponentsjs/webcomponents-loader.js"></script>
+
+  <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+  <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+  <link rel="import" href="../multi-select-combo-box.html">
+
+  <custom-style>
+    <style is="custom-style" include="demo-pages-shared-styles">
+    </style>
+  </custom-style>
+</head>
+
+<body>
+  <div class="vertical-section-container centered">
+    <h3>Basic multi-select-combo-box demo</h3>
+    <demo-snippet>
+      <template>
+        <multi-select-combo-box id="basic-demo"></multi-select-combo-box>
+        <script>
+          document.addEventListener('WebComponentsReady', () => {
+            document.querySelector('#basic-demo').items = ["List item 1", "List item 2", "List item 3", "List item 4", "List item 5"];
+          });
+        </script>
+      </template>
+    </demo-snippet>
+
+    <h3>Objects multi-select-combo-box demo</h3>
+    <demo-snippet>
+      <template>
+        <multi-select-combo-box id="objects-demo" value-field="id" display-field="name"></multi-select-combo-box>
+        <script>
+          document.addEventListener('WebComponentsReady', () => {
+            document.querySelector('#objects-demo').items = [{ "id": 1, "name": "Name1" }, { "id": 2, "name": "Name2" }, { "id": 3, "name": "Name3" }, { "id": 4, "name": "Name4" }, { "id": 5, "name": "Name5" }];
+          });
+        </script>
+      </template>
+    </demo-snippet>
+  </div>
+</body>
+
+</html>

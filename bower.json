@@ -1,0 +1,19 @@
+{
+  "name": "multi-select-combo-box",
+  "description": "Multi select combo box based on vaadin-combo-box component",
+  "main": "multi-select-combo-box.html",
+  "version": "1.0.1",
+  "license": "MIT",
+  "dependencies": {
+    "polymer": "Polymer/polymer#^2.0.0",
+    "vaadin-combo-box": "vaadin/vaadin-combo-box#^4.1.0"
+  },
+  "devDependencies": {
+    "iron-demo-helpers": "PolymerElements/iron-demo-helpers#^2.0.0",
+    "web-component-tester": "Polymer/web-component-tester#^6.0.0",
+    "webcomponentsjs": "webcomponents/webcomponentsjs#^1.0.0"
+  },
+  "resolutions": {
+    "polymer": "^2.0.0"
+  }
+}

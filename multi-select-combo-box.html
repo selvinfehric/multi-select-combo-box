@@ -1,6 +1,8 @@
 <link rel="import" href="../polymer/polymer-element.html">
-<link rel="import" href="../vaadin-text-field/vaadin-text-field.html">
-<link rel="import" href="../vaadin-combo-box/vaadin-combo-box-light.html">
+<link rel="import" href="../vaadin-text-field/src/vaadin-text-field.html">
+<link rel="import" href="../vaadin-combo-box/src/vaadin-combo-box-light.html">
+<link rel="import" href="../iron-icon/iron-icon.html">
+<link rel="import" href="../iron-icons/iron-icons.html">
 
 <dom-module id="multi-select-combo-box">
   <template>
@@ -26,20 +28,19 @@
       }
 
       .token {
-        font-size: var(--lumo-font-size-s);
+        font-size: .875rem;
         display: flex;
-        padding: var(--lumo-space-xs);
-        border-radius: calc(var(--lumo-border-radius) / 2);
-        background-color: var(--lumo-contrast-20pct);
-        margin-right: var(--lumo-space-xs);
+        padding: 0.25rem;
+        border-radius: 0.125em;
+        background-color: hsla(214, 53%, 23%, 0.16);
+        margin-right: 0.25rem;
         cursor: pointer;
         white-space: nowrap;
       }
 
-      .token::after {
-        font-family: "lumo-icons";
-        content: var(--lumo-icons-cross);
-        font-size: var(--lumo-font-size-m);
+      iron-icon {
+        --iron-icon-width: .875rem;
+        --iron-icon-height: .875rem;
       }
     </style>
 
@@ -48,7 +49,9 @@
       <vaadin-text-field on-keydown="_onKeyDown" label="[[label]]" id="tf">
         <div slot="prefix" id="tokens">
           <template is="dom-repeat" items="[[selectedItems]]">
-            <div class="token" on-click="_onTokenClick">[[_getItemDisplayText(item)]]</div>
+            <div class="token" on-click="_onTokenClick">[[_getItemDisplayText(item)]]
+              <iron-icon icon="icons:close"></iron-icon>
+            </div>
           </template>
         </div>
       </vaadin-text-field>
@@ -108,7 +111,7 @@
         }
 
         this._cbValue = '';
-        
+
         // TODO: This shouldn't be needed!
         setTimeout(() => this.$.cb.$.overlay._selectedItem = '');
       }

@@ -23,6 +23,8 @@ If you want to save it in bower.json file, remember to add flag `--save`
   <template>
     <script src="../webcomponentsjs/webcomponents-lite.js"></script>
     <link rel="import" href="multi-select-combo-box.html">
+    <link rel="import" href="../vaadin-combo-box/theme/lumo/vaadin-combo-box-light.html">
+    <link rel="import" href="../vaadin-text-field/theme/lumo/vaadin-text-field.html">
     <style>
         multi-select-combo-box {
           height: 200px;

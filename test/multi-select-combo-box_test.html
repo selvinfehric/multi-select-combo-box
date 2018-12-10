@@ -6,13 +6,12 @@
 
     <title>multi-select-combo-box test</title>
 
-    <script src="../../webcomponentsjs/webcomponents-loader.js"></script>
-    <script src="../../web-component-tester/browser.js"></script>
+    <script src="../../@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
+    <script src="../../wct-browser-legacy/browser.js"></script>
 
-    <link rel="import" href="../multi-select-combo-box.html">
+    <script type="module" src="../multi-select-combo-box.js"></script>
   </head>
   <body>
-
     <test-fixture id="BasicTestFixture">
       <template>
         <multi-select-combo-box></multi-select-combo-box>
@@ -25,7 +24,9 @@
       </template>
     </test-fixture>
 
-    <script>
+    <script type="module">
+      import '../multi-select-combo-box.js';
+
       suite('multi-select-combo-box', () => {
 
         test('instantiating the element with default properties works', () => {
@@ -39,12 +40,11 @@
         test('setting a property on the element works', () => {
           // Create a test fixture
           const element = fixture('ChangedPropertyTestFixture');
-          expect(element.items).to.deep.equal(["test1", "test2"]);
+          expect(element.items).to.deep.equal([ "test1", "test2" ]);
           expect(element.selectedItems).to.deep.equal([]);
         });
 
       });
     </script>
-
   </body>
 </html>

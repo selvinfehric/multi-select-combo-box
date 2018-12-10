@@ -7,36 +7,46 @@
 
   <title>multi-select-combo-box demo</title>
 
-  <script src="../../webcomponentsjs/webcomponents-loader.js"></script>
+  <script src="../../@webcomponents/webcomponentsjs/webcomponents-loader.js"></script>
 
-  <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
-  <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
-  <link rel="import" href="../multi-select-combo-box.html">
-  <link rel="import" href="../../vaadin-combo-box/theme/lumo/vaadin-combo-box-light.html">
-  <link rel="import" href="../../vaadin-text-field/theme/lumo/vaadin-text-field.html">
+  <script type="module" src="../../@polymer/iron-demo-helpers/demo-pages-shared-styles.js"></script>
+  <script type="module" src="../../@polymer/iron-demo-helpers/demo-snippet.js"></script>
+  <script type="module" src="../multi-select-combo-box.js"></script>
 
-  <custom-style>
-    <style is="custom-style" include="demo-pages-shared-styles">
-    </style>
-  </custom-style>
+  <script type="module">
+    const $_documentContainer = document.createElement('template');
+
+    $_documentContainer.innerHTML = `<custom-style>
+      <style is="custom-style" include="demo-pages-shared-styles">
+      </style>
+    </custom-style>`;
+
+    document.body.appendChild($_documentContainer.content);
+  </script>
 </head>
 
 <body>
-  <div class="vertical-section-container centered">
-    <h3>Basic multi-select-combo-box demo</h3>
-    <demo-snippet>
-      <template>
-        <multi-select-combo-box items='["List item 1", "List item 2", "List item 3", "List item 4", "List item 5"]'></multi-select-combo-box>
-      </template>
-    </demo-snippet>
+  <script type="module">
+    const $_documentContainer = document.createElement('template');
 
-    <h3>Objects multi-select-combo-box demo</h3>
-    <demo-snippet>
-      <template>
-        <multi-select-combo-box items='[{ "id": 1, "name": "Name1" }, { "id": 2, "name": "Name2" }, { "id": 3, "name": "Name3" }, { "id": 4, "name": "Name4" }, { "id": 5, "name": "Name5" }]' value-field="id" display-field="name"></multi-select-combo-box>
-      </template>
-    </demo-snippet>
-  </div>
+    $_documentContainer.innerHTML = `<div class="vertical-section-container centered">
+      <h3>Basic multi-select-combo-box demo</h3>
+      <demo-snippet>
+        <template>
+          <multi-select-combo-box items="[&quot;List item 1&quot;, &quot;List item 2&quot;, &quot;List item 3&quot;, &quot;List item 4&quot;, &quot;List item 5&quot;]"></multi-select-combo-box>
+        </template>
+      </demo-snippet>
+
+      <h3>Objects multi-select-combo-box demo</h3>
+      <demo-snippet>
+        <template>
+          <multi-select-combo-box items="[{ &quot;id&quot;: 1, &quot;name&quot;: &quot;Name1&quot; }, { &quot;id&quot;: 2, &quot;name&quot;: &quot;Name2&quot; }, { &quot;id&quot;: 3, &quot;name&quot;: &quot;Name3&quot; }, { &quot;id&quot;: 4, &quot;name&quot;: &quot;Name4&quot; }, { &quot;id&quot;: 5, &quot;name&quot;: &quot;Name5&quot; }]" value-field="id" display-field="name"></multi-select-combo-box>
+        </template>
+      </demo-snippet>
+    </div>`;
+
+    document.body.appendChild($_documentContainer.content);
+  </script>
 </body>
 
 </html>
